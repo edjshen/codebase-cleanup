@@ -11,6 +11,15 @@ from random import choice
 # DETERMINATION OF WINNER
 #
 
+"""
+Determines the winner of a rock paper scissors game
+
+Params: 2 variables containing user choices in string format. (player 1, player 2)
+
+Examples: validate(p1,computer)
+validate("rock", "paper")
+"""
+
 def validate(u,c):
     winner = -1
     possible = {"rock":"rock","paper":"paper","scissors":"scissors","rock":"scissors","paper":"rock","scissors":"paper"}

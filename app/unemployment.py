@@ -7,6 +7,8 @@ import os
 import json
 from dotenv import load_dotenv
 import requests
+import kaleido
+
 
 load_dotenv()
 
@@ -52,6 +54,10 @@ fig.show()
 
 #breakpoint()
 
+print("CSV EXPORT...")
+csv_filepath = os.path.join(os.path.dirname(__file__), "..", "reports", "unemployment.csv")
+df.to_csv(csv_filepath, index=False)
+
 
 print("DATAVIZ EXPORT...")
 # https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html#plotly.graph_objects.Figure.to_image
@@ -61,10 +67,7 @@ print("DATAVIZ EXPORT...")
 # Image export using the "kaleido" engine requires the kaleido package,
 #which can be installed using pip:
 #    $ pip install -U kaleido
-img_filepath = os.path.join(os.path.dirname(__file__), "..", "reports", "unemployment.png")
-fig.write_image(img_filepath)
+#img_filepath = os.path.join(os.path.dirname(__file__), "..", "reports", "unemployment.png")
+#fig.write_image(img_filepath)
 
 
-print("CSV EXPORT...")
-csv_filepath = os.path.join(os.path.dirname(__file__), "..", "reports", "unemployment.csv")
-df.to_csv(csv_filepath, index=False)

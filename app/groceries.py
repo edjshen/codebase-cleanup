@@ -8,7 +8,7 @@
 import os
 import statistics
 from pandas import read_csv
-from utils import to_usd
+from utils import *
 
 
 # checks to see if a products.csv file exists. If not, it uses the default

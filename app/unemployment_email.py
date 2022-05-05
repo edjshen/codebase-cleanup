@@ -48,6 +48,8 @@ fig.update_yaxes(
     showgrid=True
 )
 
+
+
 fig.show()
 
 #breakpoint()

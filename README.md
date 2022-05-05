@@ -76,3 +76,9 @@ Run email me:
 ```sh
 python -m app.email_me
 ```
+
+## Testing
+Type the following command into the command line interface:
+```sh
+pytest
+```

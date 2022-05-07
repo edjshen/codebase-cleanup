@@ -10,6 +10,10 @@ import statistics
 from pandas import read_csv
 from utils import *
 
+def avg(price):
+    
+    avg_price = statistics.median(price)
+    return avg_price
 
 # checks to see if a products.csv file exists. If not, it uses the default
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:

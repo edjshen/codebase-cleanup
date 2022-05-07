@@ -10,7 +10,3 @@ import statistics
 def to_usd(my_price):
     return f"${my_price:,.2f}"
 
-def avg(price):
-    
-    avg_price = statistics.median(price)
-    return avg_price

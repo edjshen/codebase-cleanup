@@ -36,13 +36,13 @@ print("---------")
 all_prices = []
 for p in products:
     all_prices.append(float(p["price"]))
-    print("..." + p["name"] + "   " + '${:,.2f}'.format(p["price"]))
+    print("..." + p["name"] + "   " + to_usd(p["price"]))
     
-import statistics
-avg_price = statistics.median(all_prices)
+    
+avg_price = avg(all_prices)
 
 print("---------")
-print("AVERAGE PRICE:", '${:,.2f}'.format(avg_price))
+print("AVERAGE PRICE:", to_usd(avg_price))
 
 
 

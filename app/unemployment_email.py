@@ -1,5 +1,3 @@
-
-
 print("UNEMPLOYMENT REPORT...")
 
 
@@ -7,9 +5,13 @@ import os
 import json
 from dotenv import load_dotenv
 import requests
+import base64
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
 
 load_dotenv()
 
+from app.alphavantage_service import fetch_unemployment_data
 ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
 
 # docs: https://www.alphavantage.co/documentation/#unemployment
@@ -22,10 +24,6 @@ data = parsed_response["data"]
 latest = data[0]
 print(latest) #> {'date': '2022-02-01', 'value': '3.8'}
 
-
-#exit()
-
-#
 # DATA AND CHARTING
 #
 
@@ -47,8 +45,6 @@ fig.update_yaxes(
     ticksuffix="%",
     showgrid=True
 )
-
-
 
 fig.show()
 
@@ -78,10 +74,6 @@ df.to_csv(csv_filepath, index=False)
 #
 # with attachment: https://www.twilio.com/blog/sending-email-attachments-with-twilio-sendgrid-python
 # (csv specific): https://stackoverflow.com/questions/69419892/how-to-send-email-with-dataframe-as-attachment-using-sendgrid-api-in-python
-
-import base64
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
 
 load_dotenv()
 

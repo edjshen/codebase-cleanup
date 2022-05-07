@@ -11,7 +11,7 @@ from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileT
 
 load_dotenv()
 
-from app.alphavantage_service import fetch_unemployment_data
+from alphavantage_api import *
 ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
 
 # docs: https://www.alphavantage.co/documentation/#unemployment

@@ -20,7 +20,7 @@ Examples: validate(p1,computer)
 validate("rock", "paper")
 """
 
-def validate(u,c):
+def determine_winner(u,c):
     winner = -1
     possible = {"rock":"rock","paper":"paper","scissors":"scissors","rock":"scissors","paper":"rock","scissors":"paper"}
     if u == c:
@@ -48,5 +48,9 @@ if __name__ == "__main__":
 #
     c = choice(["rock", "paper", "scissors"])
     print("COMPUTER CHOICE:", c)
-    validate(u,c)
+    
+#
+# Run logic
+#
+    determine_winner(u,c)
 

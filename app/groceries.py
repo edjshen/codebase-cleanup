@@ -33,15 +33,11 @@ products = products.to_dict('records')
 print("---------")
 print("THERE ARE", len(products), "PRODUCTS:")
 print("---------")
-
-for p in products:
-    print("..." + p["name"] + "   " + '${:,.2f}'.format(p["price"]))
-
-
 all_prices = []
 for p in products:
     all_prices.append(float(p["price"]))
-
+    print("..." + p["name"] + "   " + '${:,.2f}'.format(p["price"]))
+    
 import statistics
 avg_price = statistics.median(all_prices)
 
@@ -50,6 +46,5 @@ print("AVERAGE PRICE:", '${:,.2f}'.format(avg_price))
 
 
 
-
-
 # EMAIL INVENTORY REPORT
+

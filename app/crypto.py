@@ -26,5 +26,5 @@ latest = tsd[latest_date]
 
 print(symbol)
 print(latest_date)
-#print(to_usd(latest['4a. close (USD)']))
+print(latest['4a. close (USD)'])
 print('${:,.2f}'.format(float(latest['4a. close (USD)'])))
